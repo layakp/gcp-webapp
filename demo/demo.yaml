@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: demo-app-container
-        image: demo-app-release:latest
+        image: layakp5/demo-app-release:1.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
@@ -33,3 +33,17 @@ spec:
       port: 80
       targetPort: 8080
   #type: NodePort
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-app-loadbalancer
+spec:
+  selector:
+    app: demo-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer

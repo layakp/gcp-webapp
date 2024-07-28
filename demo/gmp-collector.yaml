@@ -1,0 +1,11 @@
+apiVersion: monitoring.googleapis.com/v1
+kind: ClusterPodMonitoring
+metadata:
+  name: demoapp-pod-monitoring
+spec:
+  selector:
+    matchLabels:
+      app: demo-app
+  endpoints:
+  - port: metrics
+    interval: 30s
