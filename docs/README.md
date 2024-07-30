@@ -35,6 +35,7 @@
    - Helm
    - Prometheus
    - Grafana
+   - AlertManager
 
    More deployment details are as below
 
@@ -213,4 +214,6 @@ etes:**
 6. **Future Enhancements:** 
    - Plan to implement CI/CD pipeline for automated deployments.
    - Explore additional monitoring tools and integrations.
+   - Migrate to a bigger and better db based on future requirement
+   - Setup Horizontal pod Autoscaler to make the application scalable
 
