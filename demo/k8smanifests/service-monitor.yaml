@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: demo-app-servicemonitor
+  namespace: default
+  labels:
+    release: prometheus-operator
+    app.kubernetes.io/instance: prometheus-operator
+spec:
+  selector:
+    matchLabels:
+      app: demo-app
+      app.kubernetes.io/instance: prometheus-operator
+  endpoints:
+    - port: "8080" 
+      path: /prometheus 
+      scheme: http
+  jobLabel: prometheus-operator
+  namespaceSelector:
+    matchNames:
+      - default 

@@ -10,6 +10,10 @@ spec:
       app: demo-app
   template:
     metadata:
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/path: '/data/metrics'
+        prometheus.io/port: '80'
       labels:
         app: demo-app
     spec:

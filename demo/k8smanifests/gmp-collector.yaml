@@ -7,5 +7,7 @@ spec:
     matchLabels:
       app: demo-app
   endpoints:
-  - port: metrics
+  - port: 8080
+    path: /prometheus
     interval: 30s
+
