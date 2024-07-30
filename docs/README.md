@@ -13,11 +13,30 @@
 ## Project Access
 - **Application url:** http://34.121.35.181/api/v1/message
 - **Monitoring:** http://34.123.237.119:3000/dashboards
+- **Documentatiotn** https://github.com/layakp/gcp-webapp/doc
+- **Java Source** https://github.com/layakp/gcp-webapp/demo
+- **Terraform Config** https://github.com/layakp/gcp-webapp/Terraform
 
 ## highlevel architecture
 ![](Cloud%20Architecture.png)
 
-## Application Deployment
+## Application details
+   - Java springboot based simple application. 
+   - Currently uses embedded H2 data base for storing data. The interfaces are created in a way it is easy to switch to other databases if required
+   - Java code is test driven and unit-test cases are writtern junit witht mockito.
+
+## Application Deployment Details
+   Application follows microservice architecture and is deployed as microservices orchestrated with K8s in GKE and GCP. Application is currently deployed as a 3 pod deployment with 3 different zones in GCP for high-availability and fault-tolerance. 
+
+   Primary infrastrustures used are 
+   - Docker 
+   - Kubernetes
+   - Terraform
+   - Helm
+   - Prometheus
+   - Grafana
+
+   More deployment details are as below
 
 ### Dockerization
 
